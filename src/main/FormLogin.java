@@ -11,9 +11,8 @@ package main;
  */
 public class FormLogin extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FormLogin
-     */
+    FormPulsa pulsa = new FormPulsa();
+    
     public FormLogin() {
         initComponents();
     }
@@ -29,11 +28,11 @@ public class FormLogin extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        tUsername = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        tPassword = new javax.swing.JTextField();
         lRegister = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        bLogin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -43,12 +42,12 @@ public class FormLogin extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         jLabel2.setText("Username");
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        tUsername.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         jLabel3.setText("Password");
 
-        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        tPassword.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
 
         lRegister.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lRegister.setText("Register?");
@@ -59,9 +58,14 @@ public class FormLogin extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton1.setText("Login");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bLogin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        bLogin.setText("Login");
+        bLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bLoginActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -71,10 +75,10 @@ public class FormLogin extends javax.swing.JFrame {
                 .addContainerGap(62, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(lRegister)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
                 .addGap(58, 58, 58))
@@ -87,28 +91,36 @@ public class FormLogin extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(bLogin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lRegister)
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void lRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lRegisterMouseClicked
         System.exit(0);
     }//GEN-LAST:event_lRegisterMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
+    private void bLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLoginActionPerformed
+        String username = tUsername.getText();
+        String password = tPassword.getText();
+        
+        if (username.equals("admin") && password.equals("admin")) {           
+            this.setVisible(false);
+            pulsa.setVisible(true);
+        }
+    }//GEN-LAST:event_bLoginActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -142,12 +154,12 @@ public class FormLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton bLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lRegister;
+    private javax.swing.JTextField tPassword;
+    private javax.swing.JTextField tUsername;
     // End of variables declaration//GEN-END:variables
 }
