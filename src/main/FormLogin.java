@@ -1,14 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package main;
 
-/**
- *
- * @author Zaki Andra
- */
+import java.awt.event.KeyEvent;
+import javax.swing.*;
+
 public class FormLogin extends javax.swing.JFrame {
 
     FormPulsa pulsa = new FormPulsa();
@@ -48,6 +42,11 @@ public class FormLogin extends javax.swing.JFrame {
         jLabel3.setText("Password");
 
         tPassword.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        tPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tPasswordKeyPressed(evt);
+            }
+        });
 
         lRegister.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lRegister.setText("Register?");
@@ -64,6 +63,11 @@ public class FormLogin extends javax.swing.JFrame {
         bLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bLoginActionPerformed(evt);
+            }
+        });
+        bLogin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                bLoginKeyPressed(evt);
             }
         });
 
@@ -118,8 +122,29 @@ public class FormLogin extends javax.swing.JFrame {
         if (username.equals("admin") && password.equals("admin")) {           
             this.setVisible(false);
             pulsa.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Username atau password salah", "Login Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_bLoginActionPerformed
+
+    private void bLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_bLoginKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bLoginKeyPressed
+
+    private void tPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tPasswordKeyPressed
+        String username = tUsername.getText();
+        String password = tPassword.getText();
+        
+        
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+                if (username.equals("admin") && password.equals("admin")) {           
+                this.setVisible(false);
+                pulsa.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "Username atau password salah", "Login Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_tPasswordKeyPressed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
