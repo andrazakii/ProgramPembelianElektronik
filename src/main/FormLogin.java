@@ -24,8 +24,7 @@ public class FormLogin extends javax.swing.JFrame {
         sandi = new javax.swing.JPasswordField();
         login = new javax.swing.JButton();
         register = new javax.swing.JButton();
-        warning = new javax.swing.JLabel();
-        labelWarning = new javax.swing.JLabel();
+        warning1 = new javax.swing.JLabel();
 
         jButton2.setText("jButton2");
 
@@ -42,13 +41,13 @@ public class FormLogin extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Masukkan Username & Password Anda!");
 
-        jLabel4.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel4.setText("Username");
 
-        jLabel5.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel5.setText("Password");
 
-        username.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        username.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         username.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,7 +55,8 @@ public class FormLogin extends javax.swing.JFrame {
             }
         });
 
-        sandi.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        sandi.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        sandi.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         sandi.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 sandiKeyPressed(evt);
@@ -79,10 +79,9 @@ public class FormLogin extends javax.swing.JFrame {
             }
         });
 
-        warning.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
-        warning.setForeground(new java.awt.Color(255, 0, 0));
-
-        labelWarning.setText("a");
+        warning1.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
+        warning1.setForeground(new java.awt.Color(255, 0, 0));
+        warning1.setText("l");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -97,21 +96,17 @@ public class FormLogin extends javax.swing.JFrame {
                         .addComponent(register)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(login))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(36, 36, 36)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(username, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(sandi, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(warning1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(36, 36, 36)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(username, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(sandi, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(39, 39, 39))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(labelWarning)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(warning, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,16 +118,14 @@ public class FormLogin extends javax.swing.JFrame {
                 .addGap(46, 46, 46)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(sandi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sandi, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(warning)
-                    .addComponent(labelWarning))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addComponent(warning1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(register)
                     .addComponent(login))
@@ -151,6 +144,7 @@ public class FormLogin extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
@@ -158,18 +152,44 @@ public class FormLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-//        String username = acc.getUsername()
+            String usernameText = username.getText().trim();
+            String passwordText = new String(sandi.getPassword()).trim();
+            
+            if (usernameText.isEmpty() || passwordText.isEmpty()) {
+                warning1.setText("Username atau Password tidak boleh kosong!");
+            } else {
+                if (usernameText.equals(acc.getUsername()) && passwordText.equals(acc.getPassword())) {
+                    FormPulsa home = new FormPulsa();
+                    home.setVisible(true);
+                    this.dispose();
+                } else {
+                    warning1.setText("Username atau Password salah!");
+                }
+            }
     }//GEN-LAST:event_loginActionPerformed
 
     private void registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerActionPerformed
         FormRegister reg = new FormRegister();
-        this.setVisible(false);
+        this.dispose();
         reg.setVisible(true);
     }//GEN-LAST:event_registerActionPerformed
 
     private void sandiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sandiKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-
+            String usernameText = username.getText().trim();
+            String passwordText = new String(sandi.getPassword()).trim();
+            
+            if (usernameText.isEmpty() || passwordText.isEmpty()) {
+                warning1.setText("Username atau Password tidak boleh kosong!");
+            } else {
+                if (usernameText.equals(acc.getUsername()) && passwordText.equals(acc.getPassword())) {
+                    FormPulsa home = new FormPulsa();
+                    home.setVisible(true);
+                    this.dispose();
+                } else {
+                    warning1.setText("Username atau Password salah!");
+                }
+            }
         }
     }//GEN-LAST:event_sandiKeyPressed
 
@@ -180,11 +200,10 @@ public class FormLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel labelWarning;
     private javax.swing.JButton login;
     private javax.swing.JButton register;
     private javax.swing.JPasswordField sandi;
     private javax.swing.JTextField username;
-    private javax.swing.JLabel warning;
+    private javax.swing.JLabel warning1;
     // End of variables declaration//GEN-END:variables
 }

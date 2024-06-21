@@ -194,7 +194,7 @@ public class FormRegister extends javax.swing.JFrame {
             acc.setPassword(passwordText);
 
             FormLogin log = new FormLogin();
-            this.setVisible(false);
+            this.dispose();
             log.setVisible(true);
         }
     }//GEN-LAST:event_registerActionPerformed
@@ -216,7 +216,7 @@ public class FormRegister extends javax.swing.JFrame {
                 acc.setPassword(passwordText);
 
                 FormLogin log = new FormLogin();
-                this.setVisible(false);
+                this.dispose();
                 log.setVisible(true);
             }
         }
@@ -239,7 +239,7 @@ public class FormRegister extends javax.swing.JFrame {
                 acc.setPassword(passwordText);
 
                 FormLogin log = new FormLogin();
-                this.setVisible(false);
+                this.dispose();
                 log.setVisible(true);
             }
         }
